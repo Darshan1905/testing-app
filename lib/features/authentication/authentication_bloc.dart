@@ -685,7 +685,10 @@ class AuthenticationBloc extends RxBlocTypeBase {
           return completer.future;
         }
         // If coming from Create Account flow and user does not exist, auto-create
-        if (routeName == RouteName.createAccount && (mobile.isNotEmpty || email.isNotEmpty)) {
+        // Also auto-create for social login from Login route (email present)
+        if (((routeName == RouteName.createAccount) ||
+                (routeName == RouteName.login && email.isNotEmpty)) &&
+            (mobile.isNotEmpty || email.isNotEmpty)) {
           try {
             String deviceID = await Utility.getDeviceId();
             var createParam = {
@@ -731,6 +734,10 @@ class AuthenticationBloc extends RxBlocTypeBase {
           "country_shortcode": countryShortName ?? '', // 'IN', 'PK', 'US'
           "full_name": userName
         };
+        // If coming from Login with phone (no email), open Create Account in phone_verified mode (only Full Name)
+        if (routeName == RouteName.login && email.isEmpty && mobile.isNotEmpty) {
+          param["mode"] = "phone_verified";
+        }
         GoRoutesPage.go(
             mode: NavigatorMode.remove,
             moveTo: RouteName.createAccount,

@@ -28,6 +28,7 @@ class _CreateAccountState extends BaseState {
   late FocusNode _nameFieldFocusNode;
   late FocusNode _phoneFieldFocusNode;
   GlobalBloc? _globalBloc;
+  String? mode; // 'phone_verified' shows slim UI for name-only and direct create
 
   @override
   init() {
@@ -51,6 +52,9 @@ class _CreateAccountState extends BaseState {
       }
       if (param['full_name'] != null && param['full_name'] != "") {
         _authBloc.fullNameTextEditingController.text = param['full_name'];
+      }
+      if (param['mode'] != null && param['mode'] != "") {
+        mode = param['mode'];
       }
     }
 
@@ -118,8 +122,8 @@ class _CreateAccountState extends BaseState {
                 const SizedBox(
                   height: 50.0,
                 ),
-                // Country + Mobile input
-                Container(
+                // Country + Mobile input (hide in phone_verified mode)
+                if (mode != 'phone_verified') Container(
                   decoration: BoxDecoration(
                     color: AppColorStyle.backgroundVariant(context),
                     borderRadius: const BorderRadius.all(
@@ -195,31 +199,17 @@ class _CreateAccountState extends BaseState {
                     ],
                   ),
                 ),
-                const SizedBox(height: 20.0),
-                // Social sign-in buttons
-                GoogleAppleSignInWidget(
+                if (mode != 'phone_verified') const SizedBox(height: 20.0),
+                // Social sign-in buttons (hidden in phone_verified mode)
+                if (mode != 'phone_verified') GoogleAppleSignInWidget(
                   onTap: () async {
-                    if (_authBloc.fullNameTextEditingController.text.trim().isEmpty) {
-                      Toast.show(context,
-                          message: StringHelper.createAccountFullNameValidation,
-                          gravity: Toast.toastTop,
-                          type: Toast.toastError);
-                      return;
-                    }
                     await _authBloc.googleSignIn(context, RouteName.createAccount, _globalBloc);
                   },
                   isGoogle: true,
                 ),
-                const SizedBox(height: 12.0),
-                GoogleAppleSignInWidget(
+                if (mode != 'phone_verified') const SizedBox(height: 12.0),
+                if (mode != 'phone_verified') GoogleAppleSignInWidget(
                   onTap: () async {
-                    if (_authBloc.fullNameTextEditingController.text.trim().isEmpty) {
-                      Toast.show(context,
-                          message: StringHelper.createAccountFullNameValidation,
-                          gravity: Toast.toastTop,
-                          type: Toast.toastError);
-                      return;
-                    }
                     await _authBloc.appleSignIn(context, RouteName.createAccount, _globalBloc);
                   },
                   isGoogle: false,
@@ -355,26 +345,37 @@ class _CreateAccountState extends BaseState {
                                       type: Toast.toastError);
                                   return;
                                 }
-                                if (_authBloc.getMobileNumberValue.isEmpty || _authBloc.getMobileNumberValue.length < 8) {
-                                  _phoneFieldFocusNode.requestFocus();
-                                  Toast.show(context,
-                                      message: _authBloc.getMobileNumberValue.isEmpty
-                                          ? StringHelper.otpMobileValidation
-                                          : StringHelper.otpMobileInvalid,
-                                      type: Toast.toastError,
-                                      gravity: Toast.toastTop,
-                                      duration: 2);
-                                  return;
-                                }
                                 if (isRedundantClick(DateTime.now())) {
                                   return;
                                 }
                                 _nameFieldFocusNode.unfocus();
                                 _phoneFieldFocusNode.unfocus();
-                                // Send OTP for create-account route; OTP verify will auto-create if user not found
-                                _authBloc.sendOTP(RouteName.createAccount, context);
+                                if (mode == 'phone_verified') {
+                                  // Direct create account using verified phone params
+                                  _authBloc.createAccount(context,
+                                      mobileNumber: mobileNumber,
+                                      emailAddress: emailAddress,
+                                      fullName: _authBloc.fullNameTextEditingController.text,
+                                      dialCode: dialCode,
+                                      countryShortcode: countryShortcode);
+                                } else {
+                                  // Validate phone before sending OTP in normal mode
+                                  if (_authBloc.getMobileNumberValue.isEmpty || _authBloc.getMobileNumberValue.length < 8) {
+                                    _phoneFieldFocusNode.requestFocus();
+                                    Toast.show(context,
+                                        message: _authBloc.getMobileNumberValue.isEmpty
+                                            ? StringHelper.otpMobileValidation
+                                            : StringHelper.otpMobileInvalid,
+                                        type: Toast.toastError,
+                                        gravity: Toast.toastTop,
+                                        duration: 2);
+                                    return;
+                                  }
+                                  // Send OTP for create-account route; OTP verify will auto-create if user not found
+                                  _authBloc.sendOTP(RouteName.createAccount, context);
+                                }
                               },
-                              title: 'Send OTP',
+                              title: mode == 'phone_verified' ? StringHelper.createAccountLabel : 'Send OTP',
                               logActionEvent:
                                   FBActionEvent.fbActionCreateAccount,
                               buttonColor:
