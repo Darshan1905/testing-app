@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facebook_app_id">414943210494307</string>
+    <string name="fb_login_protocol_scheme">fb414943210494307</string>
+    <string name="facebook_client_token">10e15fbd1134f81d9eacf0246113c047</string>
+    <string name="signature_key">2qaVPhpAG1O4lKAkdIGGfAS2hZY=</string>
+    <string name="installer_check_success">installer_check_success</string>
+    <string name="installer_check_error">installer_check_error</string>
+    <string name="installer_check">installer_check</string>
+    <string name="signature_check_success">signature_check_success</string>
+    <string name="signature_check_error">signature_check_error</string>
+    <string name="signature_check">signature_check</string>
+    <string name="debugger_check_success">debugger_check_success</string>
+    <string name="debugger_check_error">debugger_check_error</string>
+    <string name="debugger_check">debugger_check</string>
+</resources>

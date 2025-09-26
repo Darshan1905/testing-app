@@ -1,0 +1,167 @@
+{
+  "project_info": {
+    "project_number": "600439528646",
+    "firebase_url": "https://occusearch-default-rtdb.firebaseio.com",
+    "project_id": "occusearch",
+    "storage_bucket": "occusearch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600439528646:android:e329b2651beab53da78bc7",
+        "android_client_info": {
+          "package_name": "com.aussizzgroup.occusearch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600439528646-0octhrdoq6r5i71mqapnrpcctk4h21ul.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "32b4490301a15ab558e4ffc0ceb7e41ca7b8f43e"
+          }
+        },
+        {
+          "client_id": "600439528646-0r7rfj8iovel8pnbn3p0mso8r4csq136.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "a7e677365a9717892e8f43df785e6a31f0378632"
+          }
+        },
+        {
+          "client_id": "600439528646-1pp49gqp8blucogdofc00gmpl46ptnse.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "a30f08d9445a0418232e79974b6cb1961ed66f31"
+          }
+        },
+        {
+          "client_id": "600439528646-2nopoahrgcsvqo83gm9fl9mc724a6app.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "20f47df87a7dca80eabaf519b9513fa31c1b0a31"
+          }
+        },
+        {
+          "client_id": "600439528646-7kh79mrb8p6pv546bcipiiod6p14ubfi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "62ce7d7a318c3eba3a1fd3651c2097375da65a37"
+          }
+        },
+        {
+          "client_id": "600439528646-80ds77308rktc7imsb3co0j3cbonc3tu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "e89f18ad3ed389115a4c559cbe6c067fb23db0de"
+          }
+        },
+        {
+          "client_id": "600439528646-ace9lrfg4ah7rd5vg6vrc49lo6tcf8li.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "ad619988ee88921dd45314af8bd0dcd76cd88a61"
+          }
+        },
+        {
+          "client_id": "600439528646-e1i8bkltqdnio2efn0nethr605robfjv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "daa6953e1a401b53b894a0247481867c04b68596"
+          }
+        },
+        {
+          "client_id": "600439528646-gblar0ljjn3paa2jghdh92dfqabme713.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "39e5408a0392334a35421fa41114bd8ac8e0a799"
+          }
+        },
+        {
+          "client_id": "600439528646-gmfgoc1deeap4mbj9e9dqcf0l29c4h6m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "d11b27678e096c4e19f21cb59367171e98d9b2b6"
+          }
+        },
+        {
+          "client_id": "600439528646-ha65g1ok24dv4pj1chlg9obj4p7uct4g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "d8806fd18f065d7fc24ba067c5ea6c8dae81a527"
+          }
+        },
+        {
+          "client_id": "600439528646-ldu6u7c8g9436109mbho5vgtj6ntrqaq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "49aaa18af044ea1241c2437f102c7f22ec495c98"
+          }
+        },
+        {
+          "client_id": "600439528646-m51dm90iv3dirodf6er9l2vbr2vrgbud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "80b182ffec3e7529857c51ec535d8a96e2f1208d"
+          }
+        },
+        {
+          "client_id": "600439528646-oj5stqjq5tfim7a3hmmdekng06vgk5cg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "9a9539257ad302036b1a55086735c2075dca6842"
+          }
+        },
+        {
+          "client_id": "600439528646-vlb0tlt2611q1jn4kd8nb50tr1187o04.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aussizzgroup.occusearch",
+            "certificate_hash": "c0a945a08012077f03a194162a48e59899baa3bb"
+          }
+        },
+        {
+          "client_id": "600439528646-e79ru25jirnsunldekftcfs1n1e1lvpf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVReQ06OwoylqcBUWZtzzjwxp1pZ2Mq3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600439528646-e79ru25jirnsunldekftcfs1n1e1lvpf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "600439528646-1a5ocj704d9pfstunmrvnjus47f714jh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.aussizzgroup.occusearch"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
