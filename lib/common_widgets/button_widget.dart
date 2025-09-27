@@ -10,6 +10,9 @@ class ButtonWidget extends StatelessWidget {
   final Color? prefixIconColor;
   final bool? arrowIconVisibility;
   final TextStyle? titleTextStyle;
+  final Widget? icon;
+  final BoxBorder? border; 
+  final BorderRadiusGeometry? borderRadius; 
 
   // Firebase event log variable
   final String logActionEvent;
@@ -32,8 +35,11 @@ class ButtonWidget extends StatelessWidget {
       this.textColor,
       this.prefixIcon,
       this.prefixIconColor,
+      this.icon,
       this.arrowIconVisibility = true,
-      this.titleTextStyle});
+      this.titleTextStyle,
+      this.border,
+      this.borderRadius});
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +61,11 @@ class ButtonWidget extends StatelessWidget {
         },
         child: Ink(
           decoration: BoxDecoration(
-              color: buttonColor ?? AppColorStyle.primary(context),
-              borderRadius: const BorderRadius.all(Radius.circular(5))),
+            color: buttonColor ?? AppColorStyle.primary(context),
+            borderRadius:
+                borderRadius ?? const BorderRadius.all(Radius.circular(5)),
+            border: border, // Use the new border parameter here
+          ),
           padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
